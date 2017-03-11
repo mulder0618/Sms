@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>错误</title>
+</head>
+<style media="screen">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        background-color: #efefee;
+    }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        font-size: medium;
+    }
+
+    .bg_color {
+        background-color: #f5f5f5;
+    }
+
+    .imgs {
+        text-align: center;
+
+    }
+
+    .imgs img {
+        width: 4.34rem;
+        margin-top: 0.8rem;
+    }
+
+    .k_img img {
+        width: 1.6rem;
+    }
+
+    .imgs p {
+        color: #da4f4b;
+        font-size: 0.3rem;
+        margin-top: 0.6rem;
+    }
+
+    .k_img .wrong_chu {
+        color: #da4f4b;
+        font-size: 0.45rem;
+    }
+
+    .k_img .wrong_chu span {
+        display: inline-block;
+        margin-left: 0.5rem;
+    }
+
+    .k_img .sorry {
+        padding-top: 0.34rem;
+        font-size: 0.3rem;
+        color: #666666;
+        padding: 0;
+    }
+
+    .k_img .again_jz {
+        width: 0.3rem;
+        margin-top: 0.08rem;
+
+    }
+
+    .k_img .shuaxin {
+        font-size: 0.39rem;
+        color: #909ccc;
+        margin-top: 0.6rem;
+    }
+
+    .k_img .shuaxin a {
+        display: inline-block;
+        font-style: normal;
+        width: 1.2rem;
+        color: #ffffff;
+        background-color: #da4f4b;
+        line-height: 0.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .imgs .bq_wrong {
+        text-align: left;
+        padding-left: 0.4rem;
+        font-size: 0.28rem;
+    }
+
+    .imgs .qubao_wrong {
+        margin-top: 0.54rem;
+        padding-left: 0.4rem;
+    }
+
+    .imgs .qubao_wrong p {
+        font-size: 0.22rem;
+        line-height: 0.34rem;
+        margin-top: 0;
+        text-align: left;
+        color: #da4f4b;
+    }
+
+    .body_bg {
+        background-color: #ffffff;
+    }
+
+</style>
+<script type="text/javascript">
+    (function () {
+        var resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize';
+        var rescale = function () {
+            if (document.documentElement.clientWidth >= 640) {
+                document.documentElement.style.fontSize = 100 + 'px';
+            } else {
+                document.documentElement.style.fontSize = document.documentElement.clientWidth / 6.4 + 'px';
+            }
+        }
+        window.addEventListener(resizeEvent, rescale, false);
+        document.addEventListener('DOMContentLoaded', rescale, false);
+    })();
+</script>
+<body>
+
+<div class="container fk_color">
+    <div class="imgs k_img">
+        <img src="/images/ku.png" alt=""/>
+        <p class="wrong_chu">
+                    <span>
+                        出错了！
+                    </span>
+        </p>
+        <p class="sorry">
+            <span th:inline="text">Error Reason:[[${ex}]]</span>
+        </p>
+<!--        <p class="shuaxin">
+            <a href="javascript:history.go(-1)">返回</a>
+        </p>-->
+    </div>
+</div>
+</body>
+</html>
