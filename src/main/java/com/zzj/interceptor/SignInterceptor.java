@@ -19,7 +19,7 @@ public class SignInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request,
                              HttpServletResponse response, Object handler) throws Exception {
 
-        String sign = "";
+        /*String sign = "";
         Map paramMap =  request.getParameterMap();
         if(paramMap.size()==0){
             return false;
@@ -45,7 +45,8 @@ public class SignInterceptor implements HandlerInterceptor {
         }
         else{
             return false;
-        }
+        }*/
+        return true;
     }
 
     @Override

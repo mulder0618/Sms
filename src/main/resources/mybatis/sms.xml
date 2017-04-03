@@ -8,4 +8,16 @@
           values(#{userId},#{verificationKey},#{mobile},#{status},#{createDate},#{content},#{sendResult})
     </select>
 
+
+    <!-- 设置短信无效  -->
+    <update id="updatePhoneMessage" parameterType="java.util.HashMap">
+        update smsinfo set status=0 where mobile=#{mobile} and status=1
+    </update>
+
+
+    <select id="getPhoneCode" parameterType="java.util.HashMap" resultType="java.lang.String">
+        select t.content from smsinfo t where t.mobile=#{mobile} and t.status=1
+    </select>
+
+
 </mapper>

@@ -14,4 +14,17 @@ public interface SmsMapper {
 
     void insertSmsinfo(Map params);
 
+    /**
+     * 设置短信不可用
+     * @param parmap
+     */
+    int updatePhoneMessage(Map parmap);
+
+    /**
+     * 查询短信信息
+     * @param parMap
+     * @return
+     */
+    String getPhoneCode(Map parMap);
+
 }

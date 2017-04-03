@@ -60,6 +60,9 @@ public class SmsService {
         smsinfo.put("createDate",createDate);
         smsinfo.put("content",content);
         smsinfo.put("sendResult",sendResult);
+        //设置之前的当前用户短息为无效
+        smsMapper.updatePhoneMessage(smsinfo);
+        //插入最新短息发送数据
         smsMapper.insertSmsinfo(smsinfo);
     }
 
